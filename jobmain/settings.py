@@ -10,6 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+TRAVILY_API_KEY = os.getenv("TRAVILY_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +32,7 @@ SECRET_KEY = 'django-insecure--#p37jhnueqzp5%_l59$(t-r^-cpms6p51seux!*ir#rgpk_@i
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
