@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Research Agent</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jobmini/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Research Agent</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="company" placeholder="Enter Company Name" required>
+            <input type="text" name="role" placeholder="Enter Job Role" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>📄 Results</h2>
+            <pre>{{ result }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
